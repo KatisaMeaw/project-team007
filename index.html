@@ -7,15 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
   <body>
-    
     <header>
-			<nav class="flex justify-center md:justify-around items-center shadow-md bg-white">
-				<div class="hidden md:flex items-center md:p-4">
+			<nav class="flex justify-between items-center shadow-md  p-4">
+				<div class="flex items-center">
 					<span class="text-[#447F98] font-extrabold text-5xl ">R
 						<span class="text-[#447F98] font-extrabold text-4xl"> RELIEF</span></span>
 				</div>
-			       
-				<div class="hidden md:flex justify-end gap-4 mr-10">
+				<div class="hidden md:flex justify-center gap-28 text-shadow-none text-[#447F98] font-bold">
 					<a href="#" class="hover:text-gray-500">Home</a>
 					<a href="#" class="hover:text-gray-500">Shop</a>
 					<a href="#" class="hover:text-gray-500">About</a>
@@ -24,7 +22,7 @@
 				</div>
 
         <div>
-          <div class="flex items-center space-x-3">
+          <div class="hidden md:flex justify-center gap-6 ">
                 <a href="#" class="p-2 rounded-full text-gray-600 hover:bg-teal-100">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8z" />
@@ -191,7 +189,7 @@
                 alt="chair"
                 class="w-full h-80 object-cover"
               />
-             
+
               <div
                 class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
@@ -561,17 +559,54 @@
 </section>
 </body>
 <!-- ----------------------------------------Footer-------------------------------------------------- -->
+<footer class="bg-gray-50 py-10 md:py-10 flex ring-1 justify-center ring-red-500">
+    <div class="">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-x-16">
 
-<footer class="h-[400px] flex justify-between bg-white">
-				<div>
-	
-					<span class="text-md text-gray-600 ml-10">©2025 Relief All rights reserved</span>
+            <div class="col-span-2 md:col-span-1 ring-1 ring-yellow-500">
+                <h3 class="text-teal-600 text-xl font-bold mb-4 tracking-wider">RELIEF</h3>
+                <address class="text-gray-500 text-sm not-italic leading-relaxed">
+                    400 University Drive Suite 200 Coral<br>
+                    Gables,<br>
+                    BKK 10300 THA
+                </address>
+                
+            </div>
 
-				</div>
-        <div>
-          <a href="#" class="hover:text-gray-400 mr-5 text-gray-600">Terms</a>
-					<a href="#" class="hover:text-gray-400 mr-10 text-gray-600">Privacy</a>
+            <div class="ring-1 ring-red-500">
+                <h4 class="text-gray-500 text-sm font-normal uppercase mb-4 tracking-wider">Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-700 hover:text-teal-600 text-sm">Home</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-teal-600 text-sm">Shop</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-teal-600 text-sm">About</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-teal-600 text-sm">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-gray-500 text-sm font-normal uppercase mb-4 tracking-wider">Help</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-700 hover:text-teal-600 text-sm">Payment Options</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-teal-600 text-sm">Returns</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-teal-600 text-sm">Privacy Policies</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-gray-500 text-sm font-normal uppercase mb-4 tracking-wider">Newsletter</h4>
+                <form class="flex border-b border-gray-400">
+                    <input type="email" placeholder="Enter Your Email Address" class="flex-grow bg-transparent border-none focus:outline-none placeholder-gray-400 text-sm py-2" aria-label="Enter your email address">
+                    <button type="submit" class="text-teal-600 font-semibold text-sm py-2 px-2 uppercase tracking-wider hover:text-teal-800 transition duration-150">SUBSCRIBE</button>
+                </form>
+            </div>
+
         </div>
-			</footer>
 
+        <div class="mt-12 pt-8 border-t ">
+            <p class="text-xs text-[#447F98]">
+                ©2025 Relief All rights reserved
+            </p>
+        </div>
+    </div>
+</footer>
 </html>
