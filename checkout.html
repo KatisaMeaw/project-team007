@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - RELIEF</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // สีฟ้าอ่อนสำหรับพื้นหลังส่วน Order Summary (ใช้คล้าย Cart Totals)
+                        'primary-blue-bg': '#EAF3F7',
+                        'secondary-blue': '#B9D1E0',
+                        'text-dark': '#333333',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hide number input arrows for Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        /* Hide number input arrows for Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="font-sans text-text-dark">
+
+    <header class="shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <div class="text-xl font-bold text-black">RELIEF</div>
+            <div class="hidden md:flex space-x-8 text-sm">
+                <a href="#" class="hover:text-gray-600">Home</a>
+                <a href="#" class="hover:text-gray-600">Shop</a>
+                <a href="#" class="hover:text-gray-600">About</a>
+                <a href="#" class="hover:text-gray-600">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg></a>
+                <a href="#"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></a>
+                <a href="#"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="h-64 bg-cover bg-center relative grayscale" style="background-image: url('assets/cart-banner.jpg');">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-white">
+            <h1 class="text-4xl font-light tracking-wider">Checkout</h1>
+            <p class="text-sm mt-2">
+                <a href="#" class="hover:underline">Home</a>
+                <span class="mx-2">/</span>
+                Checkout
+            </p>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="flex flex-col lg:flex-row gap-12">
+
+            <form class="lg:w-3/5" action="#" method="POST">
+                <h2 class="text-3xl font-medium mb-10">Billing details</h2>
+
+                <div class="flex flex-wrap -mx-3 mb-4">
+                    <div class="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+                        <label class="block text-gray-700 text-sm font-medium mb-2" for="first-name">
+                            First Name
+                        </label>
+                        <input class="w-full border border-gray-300 p-3 rounded-md focus:border-secondary-blue focus:ring-secondary-blue" id="first-name" type="text">
+                    </div>
+                    <div class="w-full md:w-1/2 px-3">
+                        <label class="block text-gray-700 text-sm font-medium mb-2" for="last-name">
+                            Last Name
+                        </label>
+                        <input class="w-full border border-gray-300 p-3 rounded-md focus:border-secondary-blue focus:ring-secondary-blue" id="last-name" type="text">
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2" for="company-name">
+                        Company Name (Optional)
+                    </label>
+                    <input class="w-full border border-gray-300 p-3 rounded-md focus:border-secondary-blue focus:ring-secondary-blue" id="company-name" type="text">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2" for="country">
+                        Country / Region
+                    </label>
+                    <select class="w-full border border-gray-300 p-3 rounded-md appearance-none focus:border-secondary-blue focus:ring-secondary-blue" id="country">
+                        <option>Sri Lanka</option>
+                        <option>Thailand</option>
+                        <option>Other Country</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2" for="street-address">
+                        Street address
+                    </label>
+                    <input class="w-full border border-gray-300 p-3 rounded-md focus:border-secondary-blue focus:ring-secondary-blue" id="street-address" type="text">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2" for="city">
+                        Town / City
+                    </label>
+                    <input class="w-full border border-gray-300 p-3 rounded-md focus:border-secondary-blue focus:ring-secondary-blue" id="city" type="text">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2" for="province">
+                        Province
+                    </label>
+                    <select class="w-full border border-gray-300 p-3 rounded-md appearance-none focus:border-secondary-blue focus:ring-secondary-blue" id="province">
+                        <option>Western Province</option>
+                        <option>Bangkok</option>
+                        <option>Other Province</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2" for="zip-code">
+                        ZIP code
+                    </label>
+                    <input class="w-full border border-gray-300 p-3 rounded-md focus:border-secondary-blue focus:ring-secondary-blue" id="zip-code" type="text">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2" for="phone">
+                        Phone
+                    </label>
+                    <input class="w-full border border-gray-300 p-3 rounded-md focus:border-secondary-blue focus:ring-secondary-blue" id="phone" type="tel">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2" for="email">
+                        Email address
+                    </label>
+                    <input class="w-full border border-gray-300 p-3 rounded-md focus:border-secondary-blue focus:ring-secondary-blue" id="email" type="email">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2 sr-only" for="additional-info">
+                        Additional Information
+                    </label>
+                    <textarea class="w-full border border-gray-300 p-3 rounded-md focus:border-secondary-blue focus:ring-secondary-blue resize-none h-24" id="additional-info" placeholder="Additional Information"></textarea>
+                </div>
+            </form>
+
+            <div class="lg:w-2/5 bg-primary-blue-bg p-8 rounded-lg h-fit">
+                <div class="flex justify-between items-center text-xl font-medium mb-8">
+                    <span>Product</span>
+                    <span>Subtotal</span>
+                </div>
+
+                <div class="flex justify-between items-center mb-4 text-gray-600 text-sm">
+                    <span class="font-normal">Kruzo aero <span class="text-xs">x 1</span></span>
+                    <span class="font-normal">250,000.00</span>
+                </div>
+                <div class="flex justify-between items-center mb-4 text-base pt-4 border-t border-gray-300/50">
+                    <span class="font-medium">Subtotal</span>
+                    <span class="font-medium">250,000.00</span>
+                </div>
+
+                <div class="flex justify-between items-center mb-8 text-xl">
+                    <span class="font-bold">Total</span>
+                    <span class="font-bold text-secondary-blue">250,000.00</span>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <input id="direct-bank" name="payment-method" type="radio" checked class="text-black focus:ring-0 border-gray-300 h-4 w-4">
+                        <label for="direct-bank" class="text-sm font-medium">Direct Bank Transfer</label>
+                    </div>
+                    <p class="text-xs pl-6 text-gray-600">
+                        Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+                    </p>
+
+                    <div class="flex items-center space-x-2">
+                        <input id="direct-bank-2" name="payment-method" type="radio" class="text-black focus:ring-0 border-gray-300 h-4 w-4">
+                        <label for="direct-bank-2" class="text-sm">Direct Bank Transfer</label>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <input id="cash-on-delivery" name="payment-method" type="radio" class="text-black focus:ring-0 border-gray-300 h-4 w-4">
+                        <label for="cash-on-delivery" class="text-sm">Cash On Delivery</label>
+                    </div>
+                </div>
+
+                <p class="text-xs text-gray-600 mt-6">
+                    Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="#" class="font-medium text-black underline">privacy policy</a>.
+                </p>
+
+                <div class="mt-8 text-center">
+                    <button type="submit" class="bg-transparent text-black border border-secondary-blue hover:bg-secondary-blue/20 font-medium py-3 px-12 rounded-lg transition duration-150">
+                        Place order
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 border-b pb-8">
+                <div class="col-span-2 md:col-span-1">
+                    <h4 class="text-2xl font-bold mb-4">RELIEF</h4>
+                    <address class="text-sm text-gray-600 not-italic">
+                        400 University Drive Suite 200 Coral<br>
+                        Gables, <br>
+                        BKK 10300 THA
+                    </address>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Links</h5>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-black">Home</a></li>
+                        <li><a href="#" class="hover:text-black">Shop</a></li>
+                        <li><a href="#" class="hover:text-black">About</a></li>
+                        <li><a href="#" class="hover:text-black">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Help</h5>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-black">Payment Options</a></li>
+                        <li><a href="#" class="hover:text-black">Returns</a></li>
+                        <li><a href="#" class="hover:text-black">Privacy Policies</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2 md:col-span-2">
+                    <h5 class="font-bold mb-4">Newsletter</h5>
+                    <div class="flex border-b border-gray-400 pb-1">
+                        <input type="email" placeholder="Enter Your Email Address" class="w-full focus:outline-none placeholder-gray-500" />
+                        <button class="font-medium text-sm border-l border-gray-400 pl-4 ml-4">SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 text-sm text-gray-600">
+                2025 Relief All rights reserved
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
